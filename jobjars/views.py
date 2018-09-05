@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.template import loader
+from django.contrib import staticfiles
 import os
 
 def index(request):
@@ -8,8 +9,3 @@ def index(request):
     context = {}
     return HttpResponse(template.render(context, request))
 
-def static(request, file):
-    output=os.getcwd()
-    #staticFile = open(request.path)
-    #output = staticFile.read()
-    return HttpResponse(output)
